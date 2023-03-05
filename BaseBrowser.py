@@ -23,7 +23,11 @@ class BaseBrowser:
     def go_to_site(self):
         self.driver.get(self.url)
 
-    #Переключение между окнами в браузере
+"""     Переключение между окнами в браузере
+
+        Эта функция нужна для переключение между окнами в браузере
+        Так как при нажатии кнопки "Картинки"(Задание номер 2 пункт 3-4) открывается новая вкладка
+        А селениум продолжил бы работать в старом окне """
     def switch_window(self):
         handles = self.driver.window_handles
         self.driver.switch_to.window(handles[0])
