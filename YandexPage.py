@@ -88,4 +88,5 @@ class Search(BaseBrowser):
         self.find_element1(YandexSeacrhLocators.LOCATOR_YANDEX_BUTTON_NEXT).click()
         self.logger.info(f'Получили тектс элемента - {self.data}')
 
-
+    def get_current_url(self):
+        return self.driver.current_url

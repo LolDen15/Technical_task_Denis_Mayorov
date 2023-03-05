@@ -6,6 +6,7 @@ def test_yandex_search(browser):
     assert yandex_page.click_all_services_button() == True
     yandex_page.click_pictures_button()
     yandex_page.switch_window()
+    assert yandex_page.get_current_url() == 'https://yandex.ru/images/'
     yandex_page.click_popular_request_list()
     assert yandex_page.get_text_element() == yandex_page.get_text_input()
     yandex_page.click_first_pictures()
