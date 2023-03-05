@@ -7,5 +7,4 @@ def test_yandex_search(browser):
     assert yandex_page.check_suggest_popup() == True
     yandex_page.click_on_the_search_button()
     assert yandex_page.check_main_content() == True
-    elements = yandex_page.check_path_item()
-    assert 'tensor.ru' in elements
+    assert yandex_page.check_link_tensor() == 'tensor.ru'

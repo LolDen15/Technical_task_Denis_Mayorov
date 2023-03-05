@@ -43,10 +43,9 @@ class Search(BaseBrowser):
     def check_suggest_popup(self):
         return self.find_element1(YandexSeacrhLocators.LOCATOR_YANDEX_SUGGEST_POPUP) != None
 
-    def check_path_item(self):
-        list_main_content = self.find_elements1(YandexSeacrhLocators.LOCATOR_YANDEX_PATH_ITEM)
-        main_content = [i.text for i in list_main_content if len(i.text) > 0]
-        return main_content
+    def check_link_tensor(self):
+        text_attribute = self.get_text_attribute(YandexSeacrhLocators.LOCATOR_YANDEX_PATH_ITEM, 'text')
+        return text_attribute
 
     def click_all_services_button(self):
         self.find_element1(YandexSeacrhLocators.LOCATOR_YANDEX_ALL_SERVICES).click()
